@@ -1,3 +1,18 @@
 {% extends "website/base.html" %}
+{% load static %}
 {% block title %}Elenco{% endblock title %}
-{% block content %}Esse é o elenco:{% endblock content %}
+{% block content %}
+    <h1 class="titulo">Nosso elenco</h1>
+    <div class="galeria-elenco">
+        {% for jogador in jogadores  %}
+        <div class="jogador-card" {% if jogador.posicao == "Treinador" %}style="background-color:rgb(175, 9, 9);"{% endif %}>
+            <a href="{% url 'jogador' jogador.id %}"><img src="{% static jogador.imagem %}" alt="{{ jogador.nome }}"></a>
+            <div class="jogador-info">
+                <h3 ><a href="{% url 'jogador' jogador.id %}">{{ jogador.nome }}</a> </h3>
+                <p >{{ jogador.posicao }}</p>
+                <p>{{ jogador.idade }} anos</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

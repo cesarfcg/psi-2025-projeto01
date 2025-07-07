@@ -1,0 +1,18 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block content %}
+    <h1 class="titulo">Atleta: {{ nome }} </h1>
+        
+       
+        <div class="jogador-detalhe" {% if jogador.posicao == "Treinador" %}style="background-color:rgb(175, 9, 9)"{% endif %}>
+            <img src="{% static imagem %}" alt="{{ nome }}" class="foto-jogador">
+            <div class="info-jogador">
+                <h3>{{ nome_completo  }}</h3>
+                <p ><strong>Posição:</strong> {{ posicao }}</p>
+                <p><strong>Idade:</strong> {{ idade }} anos</p>
+                <p><strong>Local de nascimento:</strong> {{ local_nascimento }} </p>
+                <p><strong>Nacionalidade:</strong> {{ nacionalidade }} </p>
+            </div>
+        </div>
+   
+{% endblock content %}

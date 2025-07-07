@@ -1,0 +1,244 @@
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: black;
+        padding: 10px 30px;
+        color: white;
+        border-bottom: 2px solid  #c00;           
+        height: 60px;
+    }
+
+    .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .team-name {
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .menu {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu li a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    .menu li a:hover {
+        color: #c00;
+    }
+
+    /* GERAL */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+    }
+
+    main, .galeria-elenco, .jogador-detalhe {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .titulo {
+        text-align: center;
+        color: #c00;
+        margin-bottom: 30px;
+    }
+
+    /* GALERIA */
+    .galeria-elenco {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+        padding: 10px 30px;
+
+    }
+    a {
+        color:      rgb(0, 0, 0);
+        text-decoration: none; /* remove o sublinhado, se quiser */
+    }
+
+    .jogador-card {
+        background-color: white;
+        border-radius: 12px;
+        border: 1px solid rgb(0, 0, 0);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.2s;
+    }
+
+    .jogador-card:hover {
+        transform: scale(1.03);
+    }
+
+    .jogador-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .jogador-info {
+        padding: 15px;
+    }
+
+    .jogador-info h3 {
+        margin: 10px 0 5px;
+        font-size: 18px;
+        color: #111;
+    }
+
+    .jogador-info p {
+        margin: 0;
+        color: #000;
+    }
+
+    /* PÁGINA INDIVIDUAL */
+    .jogador-detalhe {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 200px;
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        width: 100%;
+
+    }
+
+    .foto-jogador {
+        width: 350px;         /* antes 180px ou 300px */
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+
+    }
+
+    /* Aumentar fonte das informações */
+    .info-jogador {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 20px;      /* maior que o padrão 16px */
+        background-color: white;      /* fundo branco */
+        border: 1px solid #ddd;       /* borda leve cinza */
+        border-radius: 10px;          /* cantos arredondados */
+        padding: 20px;                /* espaço interno */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* sombra suave */
+        
+    }
+
+    .info-jogador h2,
+    .info-jogador h3 {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    /* Aumentar título principal da página (se tiver .titulo ou h1) */
+    .titulo {
+        font-size: 32px;
+        margin-top: 30px;
+        color: #c00;
+        text-align: center;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .galeria-elenco {
+            padding: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        }
+
+        .jogador-detalhe {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        
+        }
+
+        .foto-jogador {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .info-jogador {
+            align-items: center;
+        }
+    }
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 14px;
+    margin-top: 50px;
+    border-top: 2px solid #c00;
+    }
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: darkred;
+}
+
+.jogos-layout {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ultimos-jogos {
+    flex: 3;
+}
+
+.proximo-jogo {
+    flex: 2;
+    background-color: #fefefe;
+    padding: 20px;
+    border-left: 4px solid #d00;
+    border-radius: 8px;
+}
+
+.jogo-card {
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.destaque {
+    background-color: #ffe5e5;
+    border: 1px solid #d00;
+}

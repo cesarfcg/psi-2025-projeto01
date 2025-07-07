@@ -1,3 +1,29 @@
 {% extends "website/base.html" %}
+{% load static %}
 {% block title %}Início{% endblock title %}
-{% block content %}Matheus fofura{% endblock content %}
+{% block content %}
+<h1 class="titulo">Jogos</h1>
+<div class="jogos-layout">
+    
+    <section class="ultimos-jogos">
+        <h2>Últimos Jogos</h2>
+        {% for jogo in ultimos_jogos %}
+        <div class="jogo-card">
+            <p><strong>{{ jogo.data }}</strong> - {{ jogo.campeonato }}</p>
+            <p>{{ jogo.time_casa }} {{ jogo.placar_casa }} x {{ jogo.placar_visitante }} {{ jogo.time_visitante }}</p>
+            <p><em>{{ jogo.estadio }}</em></p>
+        </div>
+        {% endfor %}
+    </section>
+
+    <aside class="proximo-jogo">
+        <h2>Próximo Jogo</h2>
+        <div class="jogo-card destaque">
+            <p><strong>{{ proximo_jogo.data }}</strong> - {{ proximo_jogo.campeonato }}</p>
+            <p>{{ proximo_jogo.time_casa }} x {{ proximo_jogo.time_visitante }}</p>
+            <p><em>{{ proximo_jogo.estadio }}</em></p>
+        </div>
+    </aside>
+
+</div>
+{% endblock content %}
