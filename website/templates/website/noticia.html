@@ -1,0 +1,15 @@
+{% extends "website/base.html" %}
+{% load static %}
+{% block title %}{{ titulo }}{% endblock title %}
+
+{% block content %}
+<h1 class="titulo">{{titulo}}</h1>
+
+<article class="noticia-individual">
+    <img src="{% static imagem %}" alt="{{ titulo }}" class="noticia-individual-img">
+    <p class="noticia-individual-data">{{ data }}</p>
+    <div class="noticia-individual-corpo">
+        <p>{{ resumo|linebreaks }}</p>
+    </div>
+</article>
+{% endblock content %}

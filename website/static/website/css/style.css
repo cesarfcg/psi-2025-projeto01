@@ -242,3 +242,107 @@
     background-color: #ffe5e5;
     border: 1px solid #d00;
 }
+.introducao-caixa {
+    background-color: #fff3f3; /* leve tom vermelho claro */
+    border-left: 6px solid #d10000; /* vermelho Flamengo */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.noticias {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.noticia-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.noticia-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.noticia-titulo {
+  font-size: 20px;
+  color: #d10000; /* vermelho Flamengo */
+  margin-bottom: 8px;
+}
+
+.noticia-data {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.noticia-resumo {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+.noticia-imagem {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 15px;
+}
+/* Responsividade */
+@media (max-width: 480px) {
+  .noticias {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+}
+.noticia-individual {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.noticia-individual-titulo {
+    font-size: 32px;
+    color: #c00;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.noticia-individual-data {
+    font-size: 14px;
+    color: #777;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.noticia-individual-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.noticia-individual-corpo p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+}

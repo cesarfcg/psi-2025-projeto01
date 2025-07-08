@@ -163,7 +163,26 @@ proximo_jogo = {
     "time_casa": "Flamengo",
     "time_visitante": "São Paulo"
 }
-context = {"jogadores":jogadores,"ultimos_jogos":ultimos_jogos,"proximo_jogo":proximo_jogo}
+noticias = [
+    {   
+        "id":1,
+        "titulo": "Flamengo anuncia novo reforço para 2025",
+        "data": "05/07/2025",
+        "resumo": "O clube confirmou a contratação do meia que promete reforçar o elenco para a próxima temporada.",
+        "imagem":"website/img/jorginhoanuncio.jpg",
+
+    },
+    {
+        "id":2,
+        "titulo": "Treino aberto: Nação Rubro-Negra poderá acompanhar a preparação do time",
+        "data": "03/07/2025",
+        "resumo": "Flamengo abrirá o treino para o público no próximo sábado, reforçando a conexão com a torcida.",
+        "imagem":"website/img/jorginhoanuncio.jpg",
+    },
+]
+introducao = {"introducao":"O Clube de Regatas do Flamengo, carinhosamente conhecido como Mengão, é uma das maiores instituições esportivas do Brasil e do mundo. Fundado em 17 de novembro de 1895, no Rio de Janeiro, o clube nasceu como uma agremiação de remo e, ao longo do tempo, se transformou em um gigante do futebol. Com uma história repleta de títulos e ídolos inesquecíveis, o Flamengo acumula conquistas nacionais e internacionais, como a Copa Libertadores da América e o Campeonato Brasileiro. A Nação Rubro-Negra, como é conhecida sua apaixonada torcida, é a maior do país e uma das mais fervorosas do planeta. Mais do que um clube, o Flamengo é um símbolo de paixão, raça e glória."}
+
+context = {"jogadores":jogadores,"ultimos_jogos":ultimos_jogos,"proximo_jogo":proximo_jogo , "introducao":introducao,"noticias":noticias}
 
 def index(request):
     return render(request,'website/index.html',context )
@@ -174,3 +193,5 @@ def sobre(request):
     return render(request,'website/sobre.html')
 def jogador(request,id_jogador):
     return render(request,"website/jogador.html",jogadores[id_jogador - 1])
+def noticia(request,id_noticia):
+    return render(request,"website/noticia.html",noticias[id_noticia - 1])

@@ -2,6 +2,26 @@
 {% load static %}
 {% block title %}Início{% endblock title %}
 {% block content %}
+{% comment "introducao" %}Introdução: coloquei a introudução em um dicionário e não dividi em "informações da introdução" pq possíveis informações como história ou fundação não se mexem.{% endcomment %}
+<h1 class="titulo">Clube de Regatas do Flamengo</h1>
+    <div class="introducao-caixa">
+        <p>{{ introducao.introducao }}</p>
+    </div>
+    
+<h1 class="titulo">Notícias</h1>
+<section class="noticias">
+    {% for noticia in noticias %}
+         <a href="{% url "noticia" noticia.id %}">
+        <article class="noticia-card">
+            <img src="{% static noticia.imagem %}" alt="noticia.titulo" class="noticia-imagem">
+            <h3 class="noticia-titulo">{{noticia.titulo}}</h3>
+            <p class="noticia-data">{{noticia.data}}</p>
+            <p class="noticia-resumo">{{noticia.resumo}}</p>
+        </article>
+        </a>
+    {% endfor %}
+</section>
+
 <h1 class="titulo">Jogos</h1>
 <div class="jogos-layout">
     
