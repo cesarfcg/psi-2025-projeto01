@@ -70,14 +70,14 @@ jogadores =  [
     },
     {
         "id": 7,
-        "nome": "Jorge Carrascal",
-        "nome_completo": "Jorge Andrés Carrascal Guardo",
-        "idade": 26,
-        "posicao": "Meia",
-        "data_nascimento": "25/05/1998",
-        "local_nascimento": "Cartagena, Colômbia",
-        "nacionalidade": "Colombiano",
-        "imagem": "website/img/rossi.jpg"
+        "nome": "Luiz Araújo",
+        "nome_completo": "Luiz de Araújo Guimarães Neto.",
+        "idade": 29,
+        "posicao": "Ponta-direita",
+        "data_nascimento": "02/06/1996",
+        "local_nascimento": "São Paulo, Brasil",
+        "nacionalidade": "Brasileiro",
+        "imagem": "website/img/luizaraujo.jpg"
     },
     {
         "id": 8,
@@ -181,8 +181,17 @@ noticias = [
     },
 ]
 introducao = {"introducao":"O Clube de Regatas do Flamengo, carinhosamente conhecido como Mengão, é uma das maiores instituições esportivas do Brasil e do mundo. Fundado em 17 de novembro de 1895, no Rio de Janeiro, o clube nasceu como uma agremiação de remo e, ao longo do tempo, se transformou em um gigante do futebol. Com uma história repleta de títulos e ídolos inesquecíveis, o Flamengo acumula conquistas nacionais e internacionais, como a Copa Libertadores da América e o Campeonato Brasileiro. A Nação Rubro-Negra, como é conhecida sua apaixonada torcida, é a maior do país e uma das mais fervorosas do planeta. Mais do que um clube, o Flamengo é um símbolo de paixão, raça e glória."}
+sobre = {
+    "info": "Este site foi desenvolvido com o objetivo de demonstrar conhecimentos em desenvolvimento web utilizando o framework Django. Ele apresenta informações organizadas, com funcionalidades como:"
+    }
+autores = [
+    {
+        "nome":"Fernando César Campos Gonzaga",
+        "email":"fernandocesar4141@gmail.com",
+    },
+]
 
-context = {"jogadores":jogadores,"ultimos_jogos":ultimos_jogos,"proximo_jogo":proximo_jogo , "introducao":introducao,"noticias":noticias}
+context = {"jogadores":jogadores,"ultimos_jogos":ultimos_jogos,"proximo_jogo":proximo_jogo , "introducao":introducao,"noticias":noticias, "sobre":sobre, "autores":autores}
 
 def index(request):
     return render(request,'website/index.html',context )
@@ -190,7 +199,7 @@ def elenco(request):
     context = {"jogadores":jogadores}
     return render(request,'website/elenco.html',context,)
 def sobre(request):
-    return render(request,'website/sobre.html')
+    return render(request,'website/sobre.html',context)
 def jogador(request,id_jogador):
     return render(request,"website/jogador.html",jogadores[id_jogador - 1])
 def noticia(request,id_noticia):
