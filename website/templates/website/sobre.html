@@ -1,2 +1,35 @@
 {% extends "website/base.html" %}
 {% load static %}
+{% block title %}Sobre{% endblock title %}
+{% block content %}
+<div class="sobre-container">
+    <h1>Sobre o Site</h1>
+    <p>Este site foi desenvolvido com o objetivo de demonstrar conhecimentos em desenvolvimento web utilizando o framework Django.</p>
+
+    <p>Ele apresenta informações organizadas, com funcionalidades como:</p>
+    
+    <ul class="info-sobre">
+        <a href="{% url "index" %}"><li >Informações e notícias sobre o clube</li></a>
+        <a href="{% url "elenco" %}"><li >Apresentação de jogadores do elenco</li></a>
+        <li >Informações detalhadas sobre cada jogador</li>
+    </ul>
+
+    <hr>
+
+    <h2>Sobre o Autor</h2>
+    <p><strong>Nome:</strong> Fernando César Campos Gonzaga</p>
+    <p><strong>Email:</strong> <a href="mailto:fernandocesar4141@gmail.com">fernandocesar4141@gmail.com</a></p>
+
+    <p>O projeto foi desenvolvido com fins educacionais e para prática de programação web utilizando:</p>
+    <ul>
+        <li>Django (Python)</li>
+        <li>HTML5 e CSS3</li>
+    </ul>
+
+    <hr>
+
+    <h2>Créditos</h2>
+    <p>As informações e imagens utilizadas no site são de fontes públicas e têm finalidade exclusivamente educacional.</p>
+</div>
+
+{% endblock content %}

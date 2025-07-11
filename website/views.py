@@ -174,10 +174,10 @@ noticias = [
     },
     {
         "id":2,
-        "titulo": "Treino aberto: Nação Rubro-Negra poderá acompanhar a preparação do time",
-        "data": "03/07/2025",
-        "resumo": "Flamengo abrirá o treino para o público no próximo sábado, reforçando a conexão com a torcida.",
-        "imagem":"website/img/jorginhoanuncio.jpg",
+        "titulo": "Flamengo inicia semana de treinos visando o retorno do Brasileirão",
+        "data": "08/07/2025",
+        "resumo": "Mais Querido enfrenta o São Paulo no próximo sábado (12), às 16h30, no Maracanã",
+        "imagem":"website/img/reestreia.jpg",
     },
 ]
 introducao = {"introducao":"O Clube de Regatas do Flamengo, carinhosamente conhecido como Mengão, é uma das maiores instituições esportivas do Brasil e do mundo. Fundado em 17 de novembro de 1895, no Rio de Janeiro, o clube nasceu como uma agremiação de remo e, ao longo do tempo, se transformou em um gigante do futebol. Com uma história repleta de títulos e ídolos inesquecíveis, o Flamengo acumula conquistas nacionais e internacionais, como a Copa Libertadores da América e o Campeonato Brasileiro. A Nação Rubro-Negra, como é conhecida sua apaixonada torcida, é a maior do país e uma das mais fervorosas do planeta. Mais do que um clube, o Flamengo é um símbolo de paixão, raça e glória."}

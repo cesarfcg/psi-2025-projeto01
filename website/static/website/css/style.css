@@ -57,11 +57,14 @@
         margin: 0 auto;
     }
 
-    .titulo {
-        text-align: center;
-        color: #c00;
-        margin-bottom: 30px;
-    }
+.titulo {
+ 
+    color: #b10000;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
 
     /* GALERIA */
     .galeria-elenco {
@@ -128,19 +131,19 @@
     }
 
     .foto-jogador {
-        width: 350px;         /* antes 180px ou 300px */
+        width: 350px;        
         height: auto;
         border-radius: 10px;
         object-fit: cover;
 
     }
 
-    /* Aumentar fonte das informações */
+   
     .info-jogador {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        font-size: 20px;      /* maior que o padrão 16px */
+        font-size: 20px;     
         background-color: white;      /* fundo branco */
         border: 1px solid #ddd;       /* borda leve cinza */
         border-radius: 10px;          /* cantos arredondados */
@@ -265,7 +268,9 @@
 }
 
 .noticia-card {
-  background-color: #fff;
+  background-color: #fdfdfd;
+  height: 400px;
+  max-height: 450px;
   border-radius: 10px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.12);
   padding: 20px;
@@ -345,4 +350,26 @@
     line-height: 1.8;
     color: #333;
     margin-bottom: 20px;
+}
+.sobre-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.sobre-container h1, .sobre-container h2 {
+    color: #b10000;
+}
+
+.sobre-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+.info-sobre a{
+    color: #000;
+    text-decoration: underline;
 }
