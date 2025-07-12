@@ -190,8 +190,9 @@ autores = [
         "email":"fernandocesar4141@gmail.com",
     },
 ]
+creditos = {"creditos":"As informações e imagens utilizadas no site são de fontes públicas e têm finalidade exclusivamente educacional."}
 
-context = {"jogadores":jogadores,"ultimos_jogos":ultimos_jogos,"proximo_jogo":proximo_jogo , "introducao":introducao,"noticias":noticias, "sobre":sobre, "autores":autores}
+context = {"jogadores":jogadores,"ultimos_jogos":ultimos_jogos,"proximo_jogo":proximo_jogo , "introducao":introducao,"noticias":noticias, "sobre":sobre, "autores":autores,"creditos":creditos}
 
 def index(request):
     return render(request,'website/index.html',context )

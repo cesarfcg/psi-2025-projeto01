@@ -366,10 +366,13 @@
 }
 
 .sobre-container a {
-    color: #007bff;
+    color: #0a8dae;
     text-decoration: none;
 }
 .info-sobre a{
-    color: #000;
+    color: #000000;
+}
+a:hover{
+    color: #b10000;
     text-decoration: underline;
 }
