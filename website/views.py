@@ -1,140 +1,8 @@
-from django.shortcuts import render
-
+from django.shortcuts import render,get_object_or_404
+from . models import Jogador,Jogo,Noticia,Introducao,ProximoJogo,Credito,Autor,Sobre
+from datetime import date
 # Create your views here.
-jogadores =  [
-        {   
-        "id": 1,
-        "nome": "Agustín Rossi",
-        "nome_completo": "Agustín Daniel Rossi",
-        "idade": 29,
-        "posicao": "Goleiro",
-        "data_nascimento": "21/08/1995",
-        "local_nascimento": "Buenos Aires, Argentina",
-        "nacionalidade": "Argentino",
-        "imagem": "website/img/rossi.jpg"
-    },
-    {
-        "id": 2,
-        "nome": "Guillermo Varela",
-        "nome_completo": "Guillermo Varela Olivera",
-        "idade": 31,
-        "posicao": "Lateral-direito",
-        "data_nascimento": "24/03/1993",
-        "local_nascimento": "Montevidéu, Uruguai",
-        "nacionalidade": "Uruguaio",
-        "imagem": "website/img/varela.jpg"
-    },
-    {
-        "id": 3,
-        "nome": "Léo Pereira",
-        "nome_completo": "Leonardo César Pereira",
-        "idade": 28,
-        "posicao": "Zagueiro",
-        "data_nascimento": "31/01/1996",
-        "local_nascimento": "Curitiba, Paraná, Brasil",
-        "nacionalidade": "Brasileiro",
-        "imagem": "website/img/leopereira.jpg"
-    },
-    {
-        "id": 4,
-        "nome": "Léo Ortiz",
-        "nome_completo": "Leonardo Rech Ortiz",
-        "idade": 29,
-        "posicao": "Zagueiro",
-        "data_nascimento": "03/01/1996",
-        "local_nascimento": "Porto Alegre, Rio Grande do Sul, Brasil",
-        "nacionalidade": "Brasileiro",
-        "imagem": "website/img/leoortiz.jpg"
-    },
-    {
-        "id": 5,
-        "nome": "Alex Sandro",
-        "nome_completo": "Alex Sandro Lobo da Silva",
-        "idade": 34,
-        "posicao": "Lateral-esquerdo",
-        "data_nascimento": "26/01/1991",
-        "local_nascimento": "Catanduva, São Paulo, Brasil",
-        "nacionalidade": "Brasileiro",
-        "imagem": "website/img/alexsandro.jpg"
-    },
-    {
-        "id": 6,
-        "nome": "Jorginho",
-        "nome_completo": "Jorge Luiz Frello Filho",
-        "idade": 33,
-        "posicao": "Volante",
-        "data_nascimento": "20/12/1991",
-        "local_nascimento": "Imbituba, Santa Catarina, Brasil",
-        "nacionalidade": "Brasileiro e italiano",
-        "imagem": "website/img/jorginho.jpg"
-    },
-    {
-        "id": 7,
-        "nome": "Luiz Araújo",
-        "nome_completo": "Luiz de Araújo Guimarães Neto.",
-        "idade": 29,
-        "posicao": "Ponta-direita",
-        "data_nascimento": "02/06/1996",
-        "local_nascimento": "São Paulo, Brasil",
-        "nacionalidade": "Brasileiro",
-        "imagem": "website/img/luizaraujo.jpg"
-    },
-    {
-        "id": 8,
-        "nome": "Erick Pulgar",
-        "nome_completo": "Erick Antonio Pulgar Farfán",
-        "idade": 30,
-        "posicao": "Volante",
-        "data_nascimento": "15/01/1994",
-        "local_nascimento": "Antofagasta, Chile",
-        "nacionalidade": "Chileno",
-        "imagem": "website/img/pulgar.jpg"
-    },
-    {
-        "id": 9,
-        "nome": "Giorgian De Arrascaeta",
-        "nome_completo": "Giorgian Daniel De Arrascaeta Benedetti",
-        "idade": 30,
-        "posicao": "Meia-ofensivo",
-        "data_nascimento": "01/06/1994",
-        "local_nascimento": "Nuevo Berlín, Uruguai",
-        "nacionalidade": "Uruguaio",
-        "imagem": "website/img/gostoso.jpg"
-    },
-    {
-        "id": 10,
-        "nome": "Pedro",
-        "nome_completo": "Pedro Guilherme Abreu dos Santos",
-        "idade": 27,
-        "posicao": "Centroavante",
-        "data_nascimento": "20/06/1997",
-        "local_nascimento": "Rio de Janeiro, RJ, Brasil",
-        "nacionalidade": "Brasileiro",
-        "imagem": "website/img/pedro.jpg"
-    },
-    {
-        "id": 11,
-        "nome": "Bruno Henrique",
-        "nome_completo": "Bruno Henrique Pinto",
-        "idade": 34,
-        "posicao": "Atacante",
-        "data_nascimento": "30/12/1990",
-        "local_nascimento": "Belo Horizonte, Minas Gerais, Brasil",
-        "nacionalidade": "Brasileiro",
-        "imagem": "website/img/bh.jpg"
-    },
-    {
-        "id": 12,
-        "nome": "Filipe Luís",
-        "nome_completo": "Filipe Luís Kasmirski",
-        "idade": 39,
-        "posicao": "Treinador",
-        "data_nascimento": "09/08/1985",
-        "local_nascimento": "Jaraguá do Sul, Santa Catarina, Brasil",
-        "nacionalidade": "Brasileiro",
-        "imagem": "website/img/filipe.png"
-    }
-]
+
 ultimos_jogos = [
     {
         "data": "29/06/2025",
@@ -192,16 +60,27 @@ autores = [
 ]
 creditos = {"creditos":"As informações e imagens utilizadas no site são de fontes públicas e têm finalidade exclusivamente educacional."}
 
-context = {"jogadores":jogadores,"ultimos_jogos":ultimos_jogos,"proximo_jogo":proximo_jogo , "introducao":introducao,"noticias":noticias, "sobre":sobre, "autores":autores,"creditos":creditos}
+context = {"ultimos_jogos":ultimos_jogos,"proximo_jogo":proximo_jogo , "introducao":introducao,"noticias":noticias, "sobre":sobre, "autores":autores,"creditos":creditos}
 
 def index(request):
+    noticias = Noticia.objects.all()
+    introducao = Introducao.objects.first()
+    jogos = Jogo.objects.all()
+    proximojogo = ProximoJogo.objects.all()
+    context = {"noticias":noticias, "introducao":introducao,"jogos":jogos,"proximojogo":proximojogo}
     return render(request,'website/index.html',context )
-def elenco(request):
-    context = {"jogadores":jogadores}
-    return render(request,'website/elenco.html',context,)
+def elenco(request,):
+    jogadores = Jogador.objects.all()
+    return render(request,'website/elenco.html',{"jogadores":jogadores})
 def sobre(request):
+    sobre = Sobre.objects.all()
+    creditos = Credito.objects.first()
+    autores = Autor.objects.all()
+    context = {"creditos":creditos,"autores":autores,"sobre":sobre}
     return render(request,'website/sobre.html',context)
 def jogador(request,id_jogador):
-    return render(request,"website/jogador.html",jogadores[id_jogador - 1])
+    jogadores = get_object_or_404(Jogador,id = id_jogador)
+    return render(request,"website/jogador.html",{"jogadores":jogadores})
 def noticia(request,id_noticia):
-    return render(request,"website/noticia.html",noticias[id_noticia - 1])
+    noticias = get_object_or_404(Noticia,id = id_noticia)
+    return render(request,"website/noticia.html",{"noticias":noticias})

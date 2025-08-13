@@ -15,10 +15,10 @@
     </ul>
 
     <hr>
+    <h2>Sobre os Autores</h2>
     {% for autor in autores %}
-    <h2>Sobre o Autor</h2>
     <p><strong>Nome:</strong> {{autor.nome}}</p>
-    <p><strong>Email:</strong> <a href="mailto:fernandocesar4141@gmail.com">{{autor.email}}</a></p>
+    <p><strong>Email:</strong> <a href="mailto:{{autor.email}}">{{autor.email}}</a></p>
 
     <p>O projeto foi desenvolvido com fins educacionais e para prática de programação web utilizando:</p>
     <ul>
@@ -29,7 +29,7 @@
     <hr>
 
     <h2>Créditos</h2>
-    <p>{{creditos.creditos}}</p>
+    <p>{{creditos.credito}}</p>
     {% endfor %}
 </div>
 

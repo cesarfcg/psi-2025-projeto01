@@ -13,7 +13,7 @@
     {% for noticia in noticias %}
          <a href="{% url "noticia" noticia.id %}">
         <article class="noticia-card">
-            <img src="{% static noticia.imagem %}" alt="noticia.titulo" class="noticia-imagem">
+            <img src=" {{noticia.imagem.url}}" alt="noticia.titulo" class="noticia-imagem">
             <h3 class="noticia-titulo">{{noticia.titulo}}</h3>
             <p class="noticia-data">{{noticia.data}}</p>
             <p class="noticia-resumo">{{noticia.resumo}}</p>
@@ -27,23 +27,25 @@
     
     <section class="ultimos-jogos">
         <h2>Últimos Jogos</h2>
-        {% for jogo in ultimos_jogos %}
+        {% for jogo in jogos %}
         <div class="jogo-card">
             <p><strong>{{ jogo.data }}</strong> - {{ jogo.campeonato }}</p>
             <p>{{ jogo.time_casa }} {{ jogo.placar_casa }} x {{ jogo.placar_visitante }} {{ jogo.time_visitante }}</p>
             <p><em>{{ jogo.estadio }}</em></p>
         </div>
-        {% endfor %}
+        
     </section>
-
+    {% endfor %}
     <aside class="proximo-jogo">
         <h2>Próximo Jogo</h2>
+        {% for jogo in proximojogo  %}
         <div class="jogo-card destaque">
-            <p><strong>{{ proximo_jogo.data }}</strong> - {{ proximo_jogo.campeonato }}</p>
-            <p>{{ proximo_jogo.time_casa }} x {{ proximo_jogo.time_visitante }}</p>
-            <p><em>{{ proximo_jogo.estadio }}</em></p>
+            <p><strong>{{ jogo.data }}</strong> - {{ jogo.campeonato }}</p>
+            <p>{{ jogo.time_casa }} x {{ jogo.time_visitante }}</p>
+            <p><em>{{ jogo.estadio }}</em></p>
         </div>
     </aside>
-
+    {% endfor %}
+    
 </div>
 {% endblock content %}

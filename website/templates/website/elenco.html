@@ -4,15 +4,15 @@
 {% block content %}
     <h1 class="titulo">Nosso elenco</h1>
     <div class="galeria-elenco">
-        {% for jogador in jogadores  %}
-        <div class="jogador-card" {% if jogador.posicao == "Treinador" %}style="background-color:rgb(175, 9, 9);"{% endif %}>
-            <a href="{% url 'jogador' jogador.id %}"><img src="{% static jogador.imagem %}" alt="{{ jogador.nome }}"></a>
+       {% for jogador in jogadores %}
+        <div class="jogador-card" {% if jogador.posicao == "TEC" %}style="background-color:rgb(175, 9, 9);"{% endif %}>
+            <a href="{% url 'jogador' jogador.id %}"><img src="{{jogador.imagem.url}}" alt="{{ jogador.nome }}"></a>
             <div class="jogador-info">
-                <h3 ><a href="{% url 'jogador' jogador.id %}">{{ jogador.nome }}</a> </h3>
+                <h3 >{{ jogador.nome_camisa }} </h3>
                 <p >{{ jogador.posicao }}</p>
                 <p>{{ jogador.idade }} anos</p>
             </div>
         </div>
-        {% endfor %}
+       {% endfor %}
     </div>
 {% endblock content %}
